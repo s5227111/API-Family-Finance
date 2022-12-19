@@ -1,5 +1,5 @@
 {
-  "name": "api-family-finance",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "express": "^4.18.2",
     "express-validator": "^6.14.2",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.7",
+    "sequelize": "^6.27.0",
     "sequelize-cli": "^6.5.2",
     "sqlite3": "^5.1.4"
   },

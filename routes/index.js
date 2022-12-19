@@ -1,28 +1,25 @@
-var bodyParser = require("body-parser");
-const cors = require("cors");
+var bodyParser = require('body-parser');
+const cors = require('cors');
 
 module.exports = (app) => {
-  // configure the app to use bodyParser()
-  app.use(
-    bodyParser.urlencoded({
-      extended: true,
-    })
-  );
-  app.use(bodyParser.json());
-  app.use(
-    cors({
-      methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-      origin: "*",
-    })
-  );
+    // configure the app to use bodyParser()
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
 
-  // define a simple route
-  app.get("/", (req, res) => {
-    res.send("Hello World! - API");
-  });
+    app.use(bodyParser.json()); app.use(cors({
+        methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+        origin: '*'
+    }));
 
-  // Require the routes
-  app.use("/users", require("./users"));
-  app.use("/transactions", require("./transactions"));
-  app.use("/groups", require("./groups"));
+    // define a simple route
+    app.get('/', (req, res) => {
+        res.send("Hello World - API");
+    });
+
+    // Require the routes
+    app.use('/users', require('./users'));
+    app.use('/transactions', require('./transactions'));
+    app.use('/groups', require('./groups'));
+    app.use('/charts', require('./charts'));
 };
