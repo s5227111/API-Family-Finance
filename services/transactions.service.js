@@ -69,6 +69,6 @@ exports.deleteTransaction = async (id) => {
 }
 
 async function createDatabase() {
-  const resultado = await db.sync();
-  console.log(resultado);
+  const result = await db.sync();
+  console.log(result);
 }
